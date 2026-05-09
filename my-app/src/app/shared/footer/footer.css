@@ -1,0 +1,85 @@
+.footer {
+  position: relative;
+  color: white;
+  height: 600px;
+  width: 100%;
+  background-image: url('/assets/bugatti.png');
+  background-size: cover;
+  background-position: 50% 70%;
+  background-repeat: no-repeat;
+}
+a{
+  
+  text-decoration: none;
+  color: white;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.linesfor {
+  padding: 1rem;
+  height: 150px;
+}
+.linesfor h1 {
+  font-size: 7rem;
+}
+.linesfor p {
+  font-size: 3rem;
+}
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.first {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.second {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.linesfor,
+.flex,
+.first,
+.second {
+  position: relative;
+  z-index: 1;
+}
+.YaS0jR {
+  filter: invert(1);
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 600px) {
+  .linesfor h1 {
+    font-size: 30px;
+  }
+  .linesfor p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 460px) {
+  .second p {
+    font-size: 15px;
+  }
+  .first h1,
+  p {
+    font-size: 15px;
+  }
+}

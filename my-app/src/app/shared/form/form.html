@@ -1,0 +1,26 @@
+<div class="video-bg">
+  <video autoplay muted loop src="/assets/car3.mp4"></video>
+</div>
+
+<form (ngSubmit)="onsubmit()" #signInForm="ngForm">
+  <h1>Sign in</h1>
+  <input
+    type="email"
+    name="email"
+    placeholder="Enter email"
+    required
+    email
+    [(ngModel)]="signindata.email"
+  />
+  <input
+    type="password"
+    name="password"
+    placeholder="Enter password"
+    [(ngModel)]="signindata.password"
+    required
+    email
+    minlength="4"
+  />
+  <button>Sign in</button>
+  <p>dont have accaunt? <a routerLink="/sign-up">register now</a></p>
+</form>

@@ -1,0 +1,13 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+:root {
+  font-size: 10px;
+}
+p {
+  font-size: 2rem;
+}
+body {
+  font-family: 'Lexend', sans-serif;
+}

@@ -1,0 +1,25 @@
+<div class="header-parrent">
+  <nav class="hednav">
+    <ul class="header">
+      <li><img src="/assets/lambo.png" alt="logo" class="forlambo" /></li>
+
+      <li><a routerLink="/Home">Home</a></li>
+      <li><a routerLink="/About">About</a></li>
+      <li><a routerLink="/Contact">Contact</a></li>
+      <li><a routerLink="/thematic">Tematuri</a></li>
+      <li><a routerLink="/form">Sign in </a></li>
+    </ul>
+    <button class="burger" (click)="toggleMenu()">
+      <img src="assets/bars-solid.svg" alt="" />
+    </button>
+    <div class="mobile-menu" [class.show-menu]="isOpen">
+      <ul>
+        <li><a routerLink="/Home" (click)="toggleMenu()">Home</a></li>
+        <li><a routerLink="/About" (click)="toggleMenu()">About</a></li>
+        <li><a routerLink="/Contact" (click)="toggleMenu()">Contact</a></li>
+        <li><a routerLink="/thematic" (click)="toggleMenu()">Tematuri</a></li>
+        <li><a routerLink="/form" (click)="toggleMenu()">Sign in </a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
