@@ -13,25 +13,24 @@ export class SignUp {
   private router = inject(Router);
 
   signupdata = {
+    phoneNumber: '',
+    password: '',
+    email: '',
     firstName: '',
     lastName: '',
-    age: '',
-    email: '',
-    password: '',
-    address: '',
-    phone: '',
-    zipcode: '',
-    avatar: '',
-    gender: '',
+    role: 'user',
   };
   onsubmit() {
-    this.http.post('https://api.everrest.educata.dev/auth/sign_up', this.signupdata).subscribe({
-      next: () => {
-        this.router.navigateByUrl('/form');
-      },
-      error: (err) => {
-        console.error(err);
-      },
-    });
+    this.http
+      .post('https://rentcar.stepprojects.ge/api/Users/register', this.signupdata)
+      .subscribe({
+        next: () => {
+          localStorage.setItem('phoneNumber', this.signupdata.phoneNumber);
+          this.router.navigateByUrl('/form');
+        },
+        error: (err) => {
+          console.error(err);
+        },
+      });
   }
 }

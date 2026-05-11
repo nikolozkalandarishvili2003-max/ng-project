@@ -11,17 +11,22 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Form {
   signindata = {
-    email: '',
+    phoneNumber: '',
     password: '',
+    email: '',
+    firstName: '',
+    lastName: '',
+    role: 'user',
   };
   private http = inject(HttpClient);
   private router = inject(Router);
 
   onsubmit() {
-    this.http.post('https://api.everrest.educata.dev/auth/sign_in', this.signindata).subscribe({
+    this.http.post('https://rentcar.stepprojects.ge/api/Users/login', this.signindata).subscribe({
       next: (data: any) => {
         (localStorage.setItem('access_token', data.access_token),
           localStorage.setItem('refresh_token', data.refresh_token));
+
         this.router.navigateByUrl('/');
       },
     });

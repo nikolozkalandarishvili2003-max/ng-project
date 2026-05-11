@@ -11,4 +11,13 @@ export class Car {
   getCars() {
     return this.http.get<IProduct[]>('https://rentcar.stepprojects.ge/api/Car');
   }
+  getPurchasedCars(phoneNumber: string) {
+    return this.http.get(`https://rentcar.stepprojects.ge/Purchase/${phoneNumber}`);
+  }
+  purchaseCar(phoneNumber: string, carId: number, multiplier: number = 1) {
+    return this.http.post(
+      `https://rentcar.stepprojects.ge/Purchase/purchase?phoneNumber=${encodeURIComponent(phoneNumber)}&carId=${carId}&multiplier=${multiplier}`,
+      {},
+    );
+  }
 }

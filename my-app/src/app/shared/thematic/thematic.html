@@ -1,1 +1,23 @@
-<p>thematic works!</p>
+<div class="video-bg">
+  <video autoplay muted loop src="assets/car2.mp4"></video>
+</div>
+
+<div class="forcol">
+  <h1 class="title">Rented Cars</h1>
+  @if (isLoading()) {
+    <p>Loading...</p>
+  } @else if (hasError()) {
+    <p>please log in!</p>
+  } @else if (purchasedCars().length === 0) {
+    <p>შეძენილი მანქანა არ გაქვს.</p>
+  } @else {
+    <div class="cards-container">
+      @for (car of purchasedCars(); track car.carId) {
+        <div class="card">
+          <h2>{{ car.carBrand }} {{ car.carModel }}</h2>
+          <button class="remove-btn" (click)="removeCar(car.carId)">Remove</button>
+        </div>
+      }
+    </div>
+  }
+</div>

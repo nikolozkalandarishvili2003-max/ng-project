@@ -5,11 +5,11 @@
 } @else {
   <div class="cards-container">
     @for (car of productsList(); track car.id) {
-      <div class="card" data-aos="fade-right" >
+      <div class="card" data-aos="fade-right">
         <img [src]="car.imageUrl2 || 'assets/no-image.png'" alt="" />
         <h2>{{ car.year }} {{ car.brand }} {{ car.model }}</h2>
         <p>{{ car.price | currency: 'USD' }}</p>
-        <button class="rent">RENT</button>
+        <button class="rent" (click)="rentCar(car.id)">RENT</button>
       </div>
     } @empty {
       <p>No products found</p>

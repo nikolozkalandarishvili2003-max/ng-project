@@ -18,49 +18,20 @@
     required
     [(ngModel)]="signupdata.lastName"
   />
-  <input type="number" name="age" placeholder="Age" required [(ngModel)]="signupdata.age" />
   <input type="email" name="email" placeholder="Email" required [(ngModel)]="signupdata.email" />
+  <input
+    type="tel"
+    name="phoneNumber"
+    placeholder="Phone (+995...)"
+    required
+    [(ngModel)]="signupdata.phoneNumber"
+  />
   <input
     type="password"
     name="password"
     placeholder="Password"
     required
-    minlength="4"
     [(ngModel)]="signupdata.password"
-  />
-  <input
-    type="text"
-    name="address"
-    placeholder="Address"
-    required
-    [(ngModel)]="signupdata.address"
-  />
-  <input
-    type="tel"
-    name="phone"
-    placeholder="Phone (+995...)"
-    required
-    [(ngModel)]="signupdata.phone"
-  />
-  <input
-    type="text"
-    name="zipcode"
-    placeholder="Zipcode"
-    required
-    [(ngModel)]="signupdata.zipcode"
-  />
-  <input
-    type="url"
-    name="avatar"
-    placeholder="Avatar URL"
-    required
-    [(ngModel)]="signupdata.avatar"
-  />
-  <input
-    type="gender"
-    name="gender"
-    placeholder="Gender (MALE or FEMALE)"
-    [(ngModel)]="signupdata.gender"
   />
   <button>Sign up</button>
   <p>Already have an account? <a routerLink="/form">Sign In</a></p>

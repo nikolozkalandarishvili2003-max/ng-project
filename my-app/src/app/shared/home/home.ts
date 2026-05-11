@@ -27,4 +27,15 @@ export class Home {
     ),
     { initialValue: [] },
   );
+  rentCar(carId: number) {
+    const phoneNumber = localStorage.getItem('phoneNumber');
+    if (!phoneNumber) {
+      alert('Please log in!');
+      return;
+    }
+    this.carService.purchaseCar(phoneNumber, carId).subscribe({
+      next: () => alert('Added!'),
+      error: () => alert('Eror!'),
+    });
+  }
 }

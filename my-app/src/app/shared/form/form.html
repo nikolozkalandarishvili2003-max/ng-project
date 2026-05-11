@@ -5,12 +5,11 @@
 <form (ngSubmit)="onsubmit()" #signInForm="ngForm">
   <h1>Sign in</h1>
   <input
-    type="email"
-    name="email"
-    placeholder="Enter email"
+    type="tel"
+    name="phoneNumber"
+    placeholder="PhoneNumber"
     required
-    email
-    [(ngModel)]="signindata.email"
+    [(ngModel)]="signindata.phoneNumber"
   />
   <input
     type="password"
@@ -18,7 +17,6 @@
     placeholder="Enter password"
     [(ngModel)]="signindata.password"
     required
-    email
     minlength="4"
   />
   <button>Sign in</button>
