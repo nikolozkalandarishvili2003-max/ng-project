@@ -8,6 +8,7 @@ import { Thematic } from './shared/thematic/thematic';
 import { Form } from './shared/form/form';
 import { SignUp } from './shared/form/sign-up/sign-up';
 import { Eror404 } from './shared/eror-404/eror-404';
+import { AddCar } from './shared/add-car/add-car';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
@@ -19,5 +20,6 @@ export const routes: Routes = [
   { path: 'thematic', component: Thematic },
   { path: 'form', component: Form },
   { path: 'sign-up', component: SignUp },
+  { path: 'add-car', component: AddCar },
   { path: '**', component: Eror404 },
 ];

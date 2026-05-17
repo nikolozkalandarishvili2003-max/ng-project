@@ -1,15 +1,14 @@
 .footer {
   position: relative;
   color: white;
-  height: 600px;
+  height: 52rem;
   width: 100%;
   background-image: url('/assets/bugatti.png');
   background-size: cover;
   background-position: 50% 70%;
   background-repeat: no-repeat;
 }
-a{
-  
+a {
   text-decoration: none;
   color: white;
 }

@@ -6,11 +6,17 @@
 }
 .cards-container {
   display: flex;
+
   flex-wrap: wrap;
   gap: 4rem;
   padding: 1rem;
   justify-content: center;
   background-color: #d8d1d1;
+}
+h1 {
+  background-color: #d8d1d1;
+  font-size: 4.5rem;
+  text-align: center;
 }
 .card {
   width: calc(25% - 1rem);
@@ -28,13 +34,130 @@
 .card:hover {
   scale: calc(1.03);
 }
+.card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 15px 0 5px 0;
+  text-align: center;
+}
 .rent {
   width: 7rem;
   height: 2.5rem;
+  background-color: #222;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 15px;
+  letter-spacing: 1px;
+}
+.rent:hover {
+  background-color: #ff4d4d;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+}
+.favorite-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+
+  width: 3.2rem;
+  height: 3.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 0.8rem;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.favorite-btn svg {
+  width: 1.5rem;
+  fill: rgba(255, 255, 255, 0.5);
+
+  transition: 0.25s;
+}
+
+.favorite-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.favorite-btn:hover svg {
+  fill: white;
+}
+
+.favorite-btn.active svg {
+  fill: #ffd166;
+}
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background-color: #d8d1d1;
+}
+
+.filter-bar input {
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.8rem;
+  border: 1px solid #ccc;
+  font-size: 1.4rem;
+  width: 14rem;
+}
+
+.filter-btn {
+  padding: 0.8rem 2rem;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: #ff4d4d;
+}
+
+.reset-btn {
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  color: #222;
+  border: 1px solid #222;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reset-btn:hover {
+  background-color: #222;
+  color: white;
 }
 @media (max-width: 900px) {
   .card {
     height: auto;
     width: auto;
+  }
+  h1 {
+    font-size: 2rem;
   }
 }

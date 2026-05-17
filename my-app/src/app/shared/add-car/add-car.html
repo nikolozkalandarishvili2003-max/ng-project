@@ -1,0 +1,84 @@
+<div class="video-bg">
+  <video autoplay muted loop src="/assets/car6.mp4"></video>
+</div>
+
+<div class="page">
+  <div class="form-card">
+    <h1>Add Your Car</h1>
+
+    <div class="form-grid">
+      <input
+        type="text"
+        placeholder="Brand"
+        [ngModel]="brand()"
+        (ngModelChange)="brand.set($event)"
+      />
+      <input
+        type="text"
+        placeholder="Model"
+        [ngModel]="model()"
+        (ngModelChange)="model.set($event)"
+      />
+      <input
+        type="number"
+        placeholder="Year"
+        [ngModel]="year()"
+        (ngModelChange)="year.set($event)"
+      />
+      <input
+        type="number"
+        placeholder="Price"
+        [ngModel]="price()"
+        (ngModelChange)="price.set($event)"
+      />
+      <input
+        type="number"
+        placeholder="Capacity"
+        [ngModel]="capacity()"
+        (ngModelChange)="capacity.set($event)"
+      />
+      <input
+        type="text"
+        placeholder="Transmission"
+        [ngModel]="transmission()"
+        (ngModelChange)="transmission.set($event)"
+      />
+      <input
+        type="text"
+        placeholder="Created By"
+        [ngModel]="createdBy()"
+        (ngModelChange)="createdBy.set($event)"
+      />
+      <input type="text" placeholder="City" [ngModel]="city()" (ngModelChange)="city.set($event)" />
+      <input
+        type="email"
+        placeholder="Email"
+        [ngModel]="createdByEmail()"
+        (ngModelChange)="createdByEmail.set($event)"
+      />
+      <input
+        type="number"
+        placeholder="Fuel Capacity"
+        [ngModel]="fuelCapacity()"
+        (ngModelChange)="fuelCapacity.set($event)"
+      />
+    </div>
+
+    <div class="file-inputs">
+      <label
+        >Image 1
+        <input class="forch" type="file" accept="image/*" (change)="onFileChange($event, 1)"
+      /></label>
+      <label
+        >Image 2
+        <input class="forch" type="file" accept="image/*" (change)="onFileChange($event, 2)"
+      /></label>
+      <label
+        >Image 3
+        <input class="forch" type="file" accept="image/*" (change)="onFileChange($event, 3)"
+      /></label>
+    </div>
+
+    <button class="submit-btn" (click)="onSubmit()">Add Car</button>
+  </div>
+</div>

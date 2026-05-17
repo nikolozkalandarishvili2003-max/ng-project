@@ -20,4 +20,17 @@ export class Car {
       {},
     );
   }
+  filterCars(capacity?: number, startYear?: number, endYear?: number, city?: string) {
+    let params: any = { pageIndex: 1, pageSize: 100 };
+
+    if (capacity) params['capacity'] = capacity;
+    if (startYear) params['startYear'] = startYear;
+    if (endYear) params['endYear'] = endYear;
+    if (city) params['city'] = city;
+
+    return this.http.get<any>('https://rentcar.stepprojects.ge/api/Car/filter', { params });
+  }
+  addCar(formData: FormData) {
+    return this.http.post('https://rentcar.stepprojects.ge/api/Car', formData);
+  }
 }

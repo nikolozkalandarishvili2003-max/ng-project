@@ -25,7 +25,8 @@ export class Form {
     this.http.post('https://rentcar.stepprojects.ge/api/Users/login', this.signindata).subscribe({
       next: (data: any) => {
         (localStorage.setItem('access_token', data.access_token),
-          localStorage.setItem('refresh_token', data.refresh_token));
+          localStorage.setItem('refresh_token', data.refresh_token),
+          localStorage.setItem('phoneNumber', this.signindata.phoneNumber));
 
         this.router.navigateByUrl('/');
       },

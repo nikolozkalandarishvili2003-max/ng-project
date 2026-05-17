@@ -1,13 +1,22 @@
 .header-parrent {
-  height: 280px;
+  height: 20rem;
   width: 100%;
 
-  background-image: url('/assets/dealership2.png');
+  background-color: #0a0a0a;
+  background-color: #0a0a0a;
   background-size: cover;
   background-position: 50% 78%;
   background-repeat: no-repeat;
 }
-
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.name {
+  color: white;
+  font-size: 4rem;
+  padding: 0;
+}
 .header {
   display: flex;
   height: 100%;
@@ -18,6 +27,7 @@
 .hednav {
   height: 200px;
   width: 100%;
+  position: relative;
 }
 li {
   font-size: 3rem;
@@ -35,6 +45,8 @@ ul a {
   width: 15rem;
   height: 10rem;
   transition: 0.5s;
+  padding: 0px;
+  object-fit: contain;
 }
 .forlambo:hover {
   width: 20rem;
@@ -71,12 +83,58 @@ ul a {
   width: 100%;
   height: 100%;
   background-color: gray;
+  gap: 2rem;
   display: none;
+}
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
 }
 .mobile-menu.show-menu {
   display: flex;
 }
-@media (max-width: 1040px) {
+.mobile-title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+.lamfor {
+  width: 12rem;
+  height: 10rem;
+}
+.needflex {
+  display: none;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  flex-direction: row;
+  top: 10px;
+  left: 20px;
+  transform: translate(10%, -20%);
+  gap: 1rem;
+}
+@media (max-width: 1350px) {
+  .header {
+    width: auto;
+  }
+  .header a {
+    font-size: 25px;
+  }
+  .header img {
+    width: 120px;
+    height: 100px;
+  }
+  .name {
+    font-size: 30px;
+  }
+}
+@media (max-width: 1140px) {
   .header {
     width: auto;
   }
@@ -87,7 +145,16 @@ ul a {
     width: 120px;
     height: 100px;
   }
+  .name {
+    font-size: 25px;
+  }
 }
+@media (max-width: 1000px) {
+  .header img {
+    display: none;
+  }
+}
+
 @media (max-width: 800px) {
   .burger {
     display: block;
@@ -97,6 +164,17 @@ ul a {
   }
   .header {
     display: none;
+  }
+
+  .header-parrent {
+    height: 8rem;
+  }
+
+  .needflex {
+    display: flex;
+  }
+  .mobile-title {
+    font-size: 2.2em;
   }
 }
 @media (max-width: 550px) {

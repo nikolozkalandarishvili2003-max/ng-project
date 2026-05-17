@@ -3,10 +3,23 @@
 } @else if (hasError()) {
   <p>Products could not be loaded.</p>
 } @else {
+  <h1>Find Your Perfect Ride</h1>
+
+  <div class="filter-bar">
+    <input type="number" placeholder="Capacity" [(ngModel)]="capacity" />
+    <input type="number" placeholder="Start Year" [(ngModel)]="startYear" />
+    <input type="number" placeholder="End Year" [(ngModel)]="endYear" />
+    <input type="text" placeholder="City" [(ngModel)]="city" />
+    <button class="filter-btn" (click)="onFilter()">Filter</button>
+    @if (isFiltered()) {
+      <button class="reset-btn" (click)="onReset()">Reset</button>
+    }
+  </div>
+
   <div class="cards-container">
-    @for (car of productsList(); track car.id) {
+    @for (car of displayList; track car.id) {
       <div class="card" data-aos="fade-right">
-        <img [src]="car.imageUrl2 || 'assets/no-image.png'" alt="" />
+        <img [src]="car.imageUrl2" (error)="$event.target.src = 'assets/dealership2.png'" alt="" />
         <h2>{{ car.year }} {{ car.brand }} {{ car.model }}</h2>
         <p>{{ car.price | currency: 'USD' }}</p>
         <button class="rent" (click)="rentCar(car.id)">RENT</button>
