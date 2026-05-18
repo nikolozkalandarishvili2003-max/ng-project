@@ -1,1 +1,105 @@
- 
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 380px;
+  padding: 50px 40px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+h1 {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 4px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-bottom 0.3s;
+  width: 100%;
+}
+
+input:focus {
+  border-bottom: 1px solid #fff;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+button {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+button:hover {
+  background-color: #ff4d4d;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+}
+
+p {
+  color: #888;
+  font-size: 13px;
+  text-align: center;
+  margin: 0;
+}
+
+p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+p a:hover {
+  text-decoration: underline;
+}

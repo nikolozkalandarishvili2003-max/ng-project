@@ -1,0 +1,46 @@
+@if (isLoading()) {
+  <p>Loading...</p>
+} @else if (car()) {
+  <div class="detail-page">
+    <div class="detail-card">
+      <div class="detail-left">
+        <img
+          [src]="car().imageUrl2"
+          (error)="$event.target.src = 'assets/dealership2.png'"
+          alt=""
+        />
+      </div>
+      <div class="detail-right">
+        <h1>{{ car().year }} {{ car().brand }} {{ car().model }}</h1>
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">City</span>
+            <span class="value">{{ car().city }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Capacity</span>
+            <span class="value">{{ car().capacity }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Transmission</span>
+            <span class="value">{{ car().transmission }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Fuel Capacity</span>
+            <span class="value">{{ car().fuelCapacity }}L</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Price</span>
+            <span class="value">{{ car().price | currency: 'USD' }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Owner</span>
+            <span class="value">{{ car().createdBy }}</span>
+          </div>
+        </div>
+        <button class="rent-btn" (click)="rentCar()">RENT NOW</button>
+        <button class="rent-btn" routerLink="/Home">Back</button>
+      </div>
+    </div>
+  </div>
+}

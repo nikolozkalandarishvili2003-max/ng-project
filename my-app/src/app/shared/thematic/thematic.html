@@ -4,17 +4,42 @@
 
 <div class="forcol">
   <h1 class="title">My Garage</h1>
+
+  <div class="user-info">
+    <div class="user-avatar">👤</div>
+    <div class="user-details">
+      <h2>{{ userName }}</h2>
+      @if (phoneNumber) {
+        <span>{{ phoneNumber }}</span>
+      }
+    </div>
+    @if (isLoggedIn) {
+      <button class="logout-btn" (click)="logOut()">Log Out</button>
+    }
+  </div>
+
   @if (isLoading()) {
     <p>Loading...</p>
   } @else if (hasError()) {
     <p>please log in!</p>
   } @else if (purchasedCars().length === 0) {
-    <p>შეძენილი მანქანა არ გაქვს.</p>
+    <p>Nothing Booked Yet.</p>
   } @else {
     <div class="cards-container">
       @for (car of purchasedCars(); track car.carId) {
-        <div class="card">
-          <h2>{{ car.carBrand }} {{ car.carModel }}</h2>
+        <div
+          class="card"
+          data-aos="fade-right"
+          [routerLink]="['/car', car.carId]"
+          style="cursor: pointer"
+        >
+          <div class="card-left">
+            <div class="card-icon">🚗</div>
+            <div class="card-info">
+              <h2>{{ car.carBrand }} {{ car.carModel }}</h2>
+              <span class="card-sub">Booked</span>
+            </div>
+          </div>
           <button class="remove-btn" (click)="removeCar(car.carId)">Remove</button>
         </div>
       }

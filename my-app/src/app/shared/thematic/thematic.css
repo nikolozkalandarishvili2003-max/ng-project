@@ -37,26 +37,21 @@
   margin-bottom: 4rem;
 }
 
-.cards-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  width: 40rem;
-}
-
 .card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.4rem 2rem;
   background: rgba(255, 255, 255, 0.08);
-  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 0.5px solid rgba(255, 255, 255, 0.137);
   border-radius: 1.2rem;
   transition: background 0.3s;
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.13);
+  background: rgba(26, 25, 25, 0);
 }
 
 .card-left {
@@ -104,4 +99,87 @@ p {
   text-align: center;
   font-size: 1.6rem;
   margin-top: 4rem;
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.card-sub {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 80rem;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.2rem;
+  padding: 2rem 2.4rem;
+  margin-bottom: 2rem;
+  width: 60rem;
+}
+
+.user-avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+}
+
+.user-details h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.user-details span {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.4rem;
+}
+.logout-btn {
+  margin-left: auto;
+  background: rgba(220, 50, 50, 0.2);
+  border: 0.5px solid rgba(220, 50, 50, 0.4);
+  border-radius: 9.9rem;
+  padding: 0.8rem 2rem;
+  color: #ff6b6b;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: rgba(220, 50, 50, 0.4);
+}
+@media (max-width: 850px) {
+  .cards-container {
+    width: 370px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+  .user-info {
+    width: 350px;
+    height: 60xp;
+  }
+  .card h2 {
+    font-size: 12px;
+  }
 }

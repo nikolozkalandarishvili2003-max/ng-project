@@ -1,10 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Car } from '../../services/car';
+import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-thematic',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './thematic.html',
   styleUrl: './thematic.css',
 })
@@ -37,4 +39,16 @@ export class Thematic {
   removeCar(carId: number) {
     this.purchasedCars.update((cars) => cars.filter((car) => car.carId !== carId));
   }
+  userName =
+    localStorage.getItem('firstName') !== null && localStorage.getItem('firstName') !== 'null'
+      ? (localStorage.getItem('firstName') ?? '') + ' ' + (localStorage.getItem('lastName') ?? '')
+      : 'Please Log In';
+
+  phoneNumber = localStorage.getItem('phoneNumber') ?? '';
+  private router = inject(Router);
+  logOut() {
+    localStorage.clear();
+    this.router.navigateByUrl('/form');
+  }
+  isLoggedIn = localStorage.getItem('phoneNumber') !== null;
 }

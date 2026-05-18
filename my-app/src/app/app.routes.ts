@@ -9,6 +9,7 @@ import { Form } from './shared/form/form';
 import { SignUp } from './shared/form/sign-up/sign-up';
 import { Eror404 } from './shared/eror-404/eror-404';
 import { AddCar } from './shared/add-car/add-car';
+import { CarDetails } from './shared/car-details/car-details';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
@@ -21,5 +22,6 @@ export const routes: Routes = [
   { path: 'form', component: Form },
   { path: 'sign-up', component: SignUp },
   { path: 'add-car', component: AddCar },
+  { path: 'car/:id', component: CarDetails },
   { path: '**', component: Eror404 },
 ];
