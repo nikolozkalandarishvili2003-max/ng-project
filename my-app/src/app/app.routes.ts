@@ -10,18 +10,20 @@ import { SignUp } from './shared/form/sign-up/sign-up';
 import { Eror404 } from './shared/eror-404/eror-404';
 import { AddCar } from './shared/add-car/add-car';
 import { CarDetails } from './shared/car-details/car-details';
+import { N8nChat } from './shared/n8n-chat/n8n-chat';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
   { path: 'Header', component: Header },
   { path: 'Footer', component: Footer },
   { path: 'Home', title: 'Home', component: Home },
-  { path: 'About',  title: 'About', component: About },
-  { path: 'Contact',  title: 'Contact',component: Contact },
-  { path: 'thematic',  title: 'My Garage', component: Thematic },
-  { path: 'form',  title: 'Sign in', component: Form },
+  { path: 'About', title: 'About', component: About },
+  { path: 'Contact', title: 'Contact', component: Contact },
+  { path: 'thematic', title: 'My Garage', component: Thematic },
+  { path: 'form', title: 'Sign in', component: Form },
   { path: 'sign-up', title: 'Sign up', component: SignUp },
   { path: 'add-car', title: 'Add A Car', component: AddCar },
   { path: 'car/:id', component: CarDetails },
+  { path: 'n8n-chat', title: 'AI CHAT', component: N8nChat },
   { path: '**', component: Eror404 },
 ];

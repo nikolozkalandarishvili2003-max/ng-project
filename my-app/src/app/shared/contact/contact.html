@@ -14,11 +14,13 @@
       <video autoplay muted loop src="assets/car1.mp4"></video>
     </div>
     <h1>Send us a Message</h1>
-    <input type="text" placeholder="Name" />
-    <input type="email" placeholder="Email" />
-    <input type="text" placeholder="Subject" />
-    <input type="tel" placeholder="Phone" />
-    <textarea placeholder="Message"></textarea>
-    <button class="send-btn">Send Message</button>
+    <form (ngSubmit)="sendmsg()">
+      <input type="text" placeholder="FirstName" name="FirstName" [(ngModel)]="contact.FirstName" />
+      <input type="text" placeholder="LastName" name="LastName" [(ngModel)]="contact.LastName" />
+      <input type="email" placeholder="Email" name="email" [(ngModel)]="contact.Email" />
+      <input type="tel" placeholder="Phone" name="Phone" [(ngModel)]="contact.Phone" />
+      <textarea placeholder="Message" name="Message" [(ngModel)]="contact.Message"></textarea>
+      <button class="send-btn">Send Message</button>
+    </form>
   </div>
 </div>

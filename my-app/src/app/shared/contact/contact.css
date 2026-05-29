@@ -111,6 +111,15 @@ textarea,
   position: relative;
   z-index: 1;
 }
+.for2 {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 @media (max-width: 900px) {
   .parent {
     height: auto;
