@@ -118,7 +118,10 @@ export class Home {
       return;
     }
     this.carService.purchaseCar(phoneNumber, carId).subscribe({
-      next: () => alert('Added!'),
+      next: () => {
+        alert('Added!');
+        this.sendRentalEmail(phoneNumber, carId);
+      },
       error: () => alert('Error!'),
     });
   }
