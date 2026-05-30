@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { Car } from '../../services/car';
 import { RouterLink } from '@angular/router';
 
@@ -11,6 +12,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.css',
 })
 export class Home {
+  private http = inject(HttpClient);
   private carService = inject(Car);
 
   isLoading = signal(true);
@@ -118,6 +120,14 @@ export class Home {
     this.carService.purchaseCar(phoneNumber, carId).subscribe({
       next: () => alert('Added!'),
       error: () => alert('Error!'),
+    });
+  }
+  sendRentalEmail(phoneNumber: string, carId: number) {
+    const webhookUrl =
+      'https://nikolozzz.app.n8n.cloud/webhook-test/dd95cea9-002a-4153-97da-b3f6b92b9cdc';
+    this.http.post(webhookUrl, { phoneNumber, carId }).subscribe({
+      next: () => console.log('Email გაგზავნილია'),
+      error: (err) => console.error('Email error:', err),
     });
   }
 }
