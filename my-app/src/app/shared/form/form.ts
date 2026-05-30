@@ -24,10 +24,11 @@ export class Form {
   onsubmit() {
     this.http.post('https://rentcar.stepprojects.ge/api/Users/login', this.signindata).subscribe({
       next: (data: any) => {
-        (localStorage.setItem('access_token', data.token),
-          localStorage.setItem('firstName', data.firstName),
-          localStorage.setItem('lastName', data.lastName),
-          localStorage.setItem('phoneNumber', this.signindata.phoneNumber));
+        ((localStorage.setItem('access_token', data.token),
+        localStorage.setItem('firstName', data.firstName),
+        localStorage.setItem('lastName', data.lastName),
+        localStorage.setItem('phoneNumber', this.signindata.phoneNumber)),
+          localStorage.setItem('email', this.signindata.email));
 
         this.router.navigateByUrl('/');
       },

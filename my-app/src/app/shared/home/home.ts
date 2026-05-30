@@ -126,9 +126,10 @@ export class Home {
     });
   }
   sendRentalEmail(phoneNumber: string, carId: number) {
+    const email = localStorage.getItem('email');
     const webhookUrl =
       'https://nikolozzz.app.n8n.cloud/webhook-test/dd95cea9-002a-4153-97da-b3f6b92b9cdc';
-    this.http.post(webhookUrl, { phoneNumber, carId }).subscribe({
+    this.http.post(webhookUrl, { phoneNumber, carId, email }).subscribe({
       next: () => console.log('Email გაგზავნილია'),
       error: (err) => console.error('Email error:', err),
     });
