@@ -22,4 +22,11 @@ export class Contact {
       .post('https://nikolozzz.app.n8n.cloud/webhook-test/contact-form', this.contact)
       .subscribe();
   }
+  subscribe() {
+    this.http
+      .post('https://nikolozzz.app.n8n.cloud/webhook-test/10dbb2cd-a67d-4356-97ff-009b4d3565ae', {
+        email: this.contact.Email,
+      })
+      .subscribe();
+  }
 }

@@ -16,7 +16,7 @@ export class N8nChat {
         target: '#n8n-chat',
         mode: 'fullscreen',
         defaultLanguage: 'en',
-        initialMessages: ['Hello how can i help you'],
+        initialMessages: ['Hello! how can i help you'],
 
         i18n: {
           en: {

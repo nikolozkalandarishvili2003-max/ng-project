@@ -99,6 +99,26 @@ textarea {
     color 0.3s;
   margin-top: 8px;
 }
+.send-btn2 {
+  background: #ffffff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s;
+  margin-top: 8px;
+}
+.forbtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
 .send-btn:hover {
   background: #333;

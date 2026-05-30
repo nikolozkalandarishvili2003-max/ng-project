@@ -20,7 +20,10 @@
       <input type="email" placeholder="Email" name="email" [(ngModel)]="contact.Email" />
       <input type="tel" placeholder="Phone" name="Phone" [(ngModel)]="contact.Phone" />
       <textarea placeholder="Message" name="Message" [(ngModel)]="contact.Message"></textarea>
-      <button class="send-btn">Send Message</button>
+      <div class="forbtn">
+        <button class="send-btn">Send Message</button>
+        <button class="send-btn and" type="button" (click)="subscribe()">Subscribe</button>
+      </div>
     </form>
   </div>
 </div>
