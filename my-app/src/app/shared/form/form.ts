@@ -28,7 +28,7 @@ export class Form {
         localStorage.setItem('firstName', data.firstName),
         localStorage.setItem('lastName', data.lastName),
         localStorage.setItem('phoneNumber', this.signindata.phoneNumber)),
-          localStorage.setItem('email', this.signindata.email));
+          localStorage.setItem('email', data.email ?? this.signindata.email));
 
         this.router.navigateByUrl('/');
       },
