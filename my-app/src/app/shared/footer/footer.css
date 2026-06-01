@@ -82,3 +82,8 @@ a {
     font-size: 15px;
   }
 }
+@media (max-width: 800px) {
+  .footer {
+    height: 62rem;
+  }
+}
