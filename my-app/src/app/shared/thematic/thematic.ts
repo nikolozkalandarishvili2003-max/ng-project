@@ -19,6 +19,7 @@ export class Thematic {
 
   ngOnInit() {
     const phoneNumber = localStorage.getItem('phoneNumber');
+
     if (!phoneNumber) {
       this.isLoading.set(false);
       this.hasError.set(true);
